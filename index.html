@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./img/favicon/icons8-sombrero-96.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>El Pollo Loco</title>
+    <script src="./models/drawable-object.class.js"></script>
+    <script src="./models/movable-object.class.js"></script>
+    <script src="./models/character.class.js"></script>
+    <script src="./models/bottles.class.js"></script>
+    <script src="./models/coins.class.js"></script>
+    <script src="./models/chicken.class.js"></script>
+    <script src="./models/health-bar.class.js"></script>
+    <script src="./models/coins-bar.class.js"></script>
+    <script src="./models/bottles-bar.class.js"></script>
+    <script src="./models/endboss-bar.class.js"></script>
+    <script src="./models/cloud.class.js"></script>
+    <script src="./models/world.class.js"></script>
+    <script src="./models/background-object.class.js"></script>
+    <script src="./models/keyboard.class.js"></script>
+    <script src="./models/level.class.js"></script>
+    <script src="./models/throwable-object.class.js"></script>
+    <script src="./models/endboss.class.js"></script>
+    <script src="./levels/level1.js"></script>
+    <script src="js/game.js"></script>
+  </head>
+  <body onload="init()">
+    <h1>El Pollo Loco</h1>
+
+    <div class="responsive-text">
+      <p>please turn the device</p>
+
+      <img src="./img/menu/icons8-handy-drehen-100.png" alt="" />
+    </div>
+
+    <div class="canvas-container">
+      <div class="top-right-canvas">
+        <a href="./game.html"
+          ><img
+            id="start-btn"
+            src="./img/menu/icons8-spielen-32.png"
+            onclick="startGame()"
+            alt=""
+        /></a>
+        <img
+          id="info-btn"
+          src="./img/menu/icons8-info-32.png"
+          alt=""
+          onclick="showPopup('info-popup')"
+        />
+        <img
+          class="hidden"
+          id="music-on"
+          src="./img/menu/icons8-mittlere-lautstärke-32.png"
+          alt=""
+          onclick="stopMusic()"
+        />
+        <img
+          id="music-off"
+          src="./img/menu/icons8-stumm-32.png"
+          alt=""
+          onclick="playMusic()"
+        />
+      </div>
+
+      <canvas id="canvas" width="720" height="480"></canvas>
+
+      <span class="impressum-link" onclick="showPopup('impressum-popup')"
+        >Impressum & Nutzungsbedingungen</span
+      >
+    </div>
+
+    <div class="popup-overlay" id="info-popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup('info-popup')">×</span>
+        <h2>El Pollo Loco</h2>
+        <p class="game-description">
+          Willkommen zu "El Pollo Loco"! Du spielst Pepe, einen mutigen
+          Mexikaner, in diesem aufregenden Jump-and-Run-Abenteuer, das in der
+          heißen mexikanischen Wüste spielt. Dein Ziel ist es, gegen verrückte
+          Hühner zu kämpfen und Salsa-Flaschen zu sammeln, um schließlich den
+          Endboss, das gigantische Huhn, zu besiegen. Viel Erfolg!
+        </p>
+      </div>
+    </div>
+
+    <div class="popup-overlay" id="impressum-popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup('impressum-popup')">×</span>
+        <h2>Impressum & Nutzungsbedingungen</h2>
+        <p class="legal-text">
+          <strong>Impressum:</strong> <br />
+          Verantwortlich für diese Website: <br />
+          Johannes Singl<br />
+          Köhlerstraße 23<br />
+          86424 Dinkelscherben<br />
+          Telefon: +49 (0)176 44452102<br />
+          E-Mail: johannes.singl@gmx.de
+        </p>
+        <p class="legal-text">
+          <strong>Nutzungsbedingungen:</strong> <br />
+          Diese Website dient ausschließlich der Unterhaltung. Die Nutzung
+          erfolgt auf eigenes Risiko. Wir übernehmen keine Haftung für Schäden,
+          die durch die Nutzung der Website entstehen könnten. Alle Rechte
+          vorbehalten.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

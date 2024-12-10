@@ -1,0 +1,356 @@
+@font-face {
+  font-family: "64";
+  src: url("./assets/fonts/Danfo-Regular.ttf");
+}
+
+body {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url(./img/5_background/main/grand-canyon-8886819_1280.png);
+  background-position: center;
+  background-size: cover;
+  font-family: "64", Arial, sans-serif;
+  color: rgb(238, 224, 22);
+}
+
+h1 {
+  font-size: 50px;
+  letter-spacing: 3px;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.canvas-container {
+  display: block;
+  position: relative;
+  width: 720px;
+  height: 480px;
+  z-index: 1;
+}
+
+.top-right-canvas {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  z-index: 2;
+}
+
+.mobile-btns-left {
+  position: absolute;
+  bottom: 0px;
+  left: 40px;
+  z-index: 2;
+}
+
+.mobile-btns-left img {
+  margin-left: 20px;
+}
+
+.mobile-btns-right {
+  position: absolute;
+  bottom: 0px;
+  right: 40px;
+  z-index: 2;
+}
+
+.mobile-btns-right img {
+  margin-left: 20px;
+}
+
+#canvas {
+  background-color: black;
+  z-index: 1;
+  display: block;
+}
+
+#music-off {
+  position: absolute;
+  right: 44px;
+  width: 32px;
+  z-index: 2;
+}
+
+#music-on {
+  position: absolute;
+  right: 44px;
+  width: 32px;
+  z-index: 2;
+}
+
+#home-btn {
+  position: absolute;
+  right: 92px;
+  width: 30px;
+  z-index: 2;
+}
+
+#info-btn {
+  position: absolute;
+  width: 30px;
+  z-index: 2;
+}
+
+#start-btn {
+  position: absolute;
+  right: 90px;
+  width: 32px;
+  z-index: 2;
+}
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.close-btn {
+  cursor: pointer;
+  color: #ff0000;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+}
+
+.game-description,
+.legal-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.impressum-link {
+  color: #ff0000;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 16px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: fantasy;
+}
+
+.manual-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  max-width: 720px;
+  backdrop-filter: invert(80%);
+}
+
+#restart-btn:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px #ffffff);
+  cursor: pointer;
+}
+
+#home-btn:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px #ffffff);
+  cursor: pointer;
+}
+
+#music-on:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px #ffffff);
+  cursor: pointer;
+}
+
+#music-off:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px #ffffff);
+  cursor: pointer;
+}
+
+#mobile-move-left:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px #ffffff);
+  cursor: pointer;
+}
+
+#mobile-move-right:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px #ffffff);
+  cursor: pointer;
+}
+
+#mobile-jump:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px #ffffff);
+  cursor: pointer;
+}
+
+#mobile-bottlethrow:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px #ffffff);
+  cursor: pointer;
+}
+
+#info-btn:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px #ffffff);
+  cursor: pointer;
+}
+
+#start-btn:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px #ffffff);
+  cursor: pointer;
+}
+
+#impressum-popup:hover {
+  filter: drop-shadow(0.5px 0.5px 0.5px #ffffff);
+  cursor: pointer;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  font-size: 32px;
+}
+
+.info-text {
+  margin-left: 16px;
+  font-size: 16px;
+}
+
+.responsive-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  text-align: center;
+  z-index: 10;
+  font-size: 32px;
+  font-family: fantasy;
+  color: black;
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 940px) {
+  .mobile-btns-right {
+    display: none;
+  }
+
+  .mobile-btns-left {
+    display: none;
+  }
+}
+
+@media (max-height: 500px) {
+  .manual-section {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  canvas {
+    width: 100%;
+  }
+
+  .canvas-container {
+    width: 100%;
+    height: fit-content;
+  }
+}
+
+@media only screen and (max-height: 480px) {
+  canvas {
+    height: 100vh;
+  }
+
+  .canvas-container {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 720px) {
+  .manual-section {
+    display: none;
+  }
+
+  .impressum-link {
+    font-size: 8px;
+  }
+
+  h1 {
+    display: none;
+  }
+
+  .mobile-btns-left {
+    bottom: 8px;
+  }
+
+  .mobile-btns-left img {
+    margin-left: 10px;
+    width: 48px;
+  }
+
+  .mobile-btns-right {
+    bottom: 8px;
+  }
+
+  .mobile-btns-right img {
+    margin-left: 10px;
+    width: 48px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .top-right-canvas {
+    position: absolute;
+  }
+
+  .canvas-container {
+    width: auto;
+  }
+
+  h1 {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .mobile-btns-left {
+    display: none;
+  }
+
+  .mobile-btns-right {
+    display: none;
+  }
+
+  .responsive-text {
+    display: block;
+  }
+
+  .canvas-container{
+    display: none;
+  }
+}
